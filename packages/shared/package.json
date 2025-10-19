@@ -5,7 +5,8 @@
   "types": "dist/index.d.ts",
   "private": true,
   "scripts": {
-    "build": "tsc -p tsconfig.build.json"
+    "build": "tsc -p tsconfig.build.json",
+    "test": "echo \"No tests for shared package\""
   },
   "devDependencies": {
     "typescript": "^5.0.0"
