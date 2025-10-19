@@ -28,7 +28,7 @@ describe('validatePhone', () => {
   test('should validate correct 10-digit phone number', () => {
     const result = validatePhone('9876543210');
     expect(result.valid).toBe(true);
-    expect(result.error).toBe('');
+    expect(result.error).toBeUndefined();
   });
 
   test('should reject phone number with less than 10 digits', () => {
@@ -66,7 +66,7 @@ describe('validateEmail', () => {
   test('should validate correct email', () => {
     const result = validateEmail('test@example.com');
     expect(result.valid).toBe(true);
-    expect(result.error).toBe('');
+    expect(result.error).toBeUndefined();
   });
 
   test('should allow empty email (optional field)', () => {
@@ -98,14 +98,15 @@ describe('validateEmail', () => {
 
 describe('formatDate', () => {
   test('should format date correctly', () => {
-    const date = new Date('2024-10-19T10:30:00');
-    const result = formatDate(date);
+    const dateString = '2024-10-19T10:30:00';
+    const result = formatDate(dateString);
     expect(result).toContain('10');
     expect(result).toContain('2024');
   });
 
-  test('should handle current date', () => {
-    const result = formatDate(new Date());
+  test('should handle current date string', () => {
+    const dateString = new Date().toISOString();
+    const result = formatDate(dateString);
     expect(result).toBeTruthy();
     expect(typeof result).toBe('string');
   });
