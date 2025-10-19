@@ -7,7 +7,10 @@
   "scripts": {
     "dev": "concurrently \"npm --workspace=@pos/server run dev\" \"npm --workspace=@pos/frontend run dev\"",
     "bootstrap": "npm install --workspaces",
-    "lint": "echo \"Add lint scripts in each package\""
+    "lint": "echo \"Add lint scripts in each package\"",
+    "test": "npm run test --workspaces",
+    "test:coverage": "npm run test:coverage --workspaces",
+    "test:ci": "npm run test:ci --workspaces"
   },
   "devDependencies": {
     "concurrently": "^8.0.0"
