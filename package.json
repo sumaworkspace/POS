@@ -1,0 +1,15 @@
+{
+  "name": "pos-monorepo",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm --workspace=@pos/server run dev\" \"npm --workspace=@pos/frontend run dev\"",
+    "bootstrap": "npm install --workspaces",
+    "lint": "echo \"Add lint scripts in each package\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.0"
+  }
+}
